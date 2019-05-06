@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML5</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="script.es6"></script>
+</head>
+<body>
+
+<div>
+    <header class="container">
+        <h1>DGSW 블로그</h1>
+    </header>
+
+    <aside class="container left-container">
+        <span onclick="openPostDialog()" id="new_posts">새 글 쓰기</span>
+        <h3>최근 글</h3>
+        <div id="recent_posts"></div>
+
+        <div id="posts"></div>
+    </aside>
+
+    <aside class="container right-container">
+        <div id="user"></div>
+    </aside>
+
+    <section class="container" id="section_container">
+        <div id="view_details">
+            <div id="post_title">title</div><hr>
+            <div id="post_username">작성자 이름</div>
+            <div id="post_created">2019.05.05 3:54</div>
+            <div id="post_content">내용</div>
+        </div>
+        <div id="posts_details">
+            <button onclick="post_move(this)">이전</button>
+            <button onclick="openEditDialog()">수정</button>
+            <button onclick="deletepost()">삭제</button>
+            <button onclick="post_move(this)">다음</button>
+        </div>
+    </section>
+
+    <footer class="container">
+        Powered by DGSW
+    </footer>
+</div>
+
+<div id="post_container">
+    <div id="post_add">
+        <div id="post_frame">
+            <div><input type="text" placeholder="title" id="add_title"></div>
+            <div><input type="text" placeholder="content" id="add_content"></div>
+            <div id="post_buttons">
+                <button onclick="saveNewPost()" id="add_Post">추가</button>
+                <button onclick="closePostDialog()">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="posts_container">
+    <div id="post_edit">
+        <div id="posts_frame">
+            <div><input type="text" placeholder="title" id="edit_title"></div>
+            <div><input type="text" placeholder="content" id="edit_content"></div>
+            <div id="posts_buttons">
+                <button onclick="editpost()" id="edit_Post">수정</button>
+                <button onclick="closePostDialog()">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<style>
+    body {
+        margin: 0;
+        position: absolute;
+    }
+
+    div #view_details {
+    }
+
+    div #posts_details{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 380px;
+    }
+
+    .container {
+        position: fixed;
+    }
+
+    header {
+        background-color: #c5e1a5;
+        height: 120px;
+        line-height: 120px;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    aside {
+        top: 120px;
+        bottom: 100px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    aside.left-container {
+        background-color: #f8ffd7;
+        left: 0;
+        width: 200px;
+    }
+
+    aside.right-container {
+        background-color: #94af76;
+        right: 0;
+        width: 200px;
+    }
+
+    section {
+        background-color: #dcedc8;
+        left: 200px;
+        right: 200px;
+        top: 120px;
+        bottom: 100px;
+        overflow-y: auto;
+    }
+
+    footer {
+        background-color: #fffffb;
+        justify-content: center;
+        text-align: center;
+        line-height: 100px;
+        height: 100px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: calc(100vh - 100px) !important;
+    }
+
+    #new_posts{
+        align: center;
+        text-decoration:underline;
+    }
+
+    #post_container, #posts_container{
+        position: absolute;
+        display: none;
+    }
+    #post_buttons, posts_buttons{
+        margin: 30px 0;
+    }
+    #post_frame, #posts_frame{
+        border: 1px solid;
+        text-align: center;
+        background-color: white;
+        padding: 20px 20px 0px 20px;
+    }
+    #post_add, posts_edit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background: #ffffff88;
+    }
+
+    #post_title{
+        font-size: 30px;
+
+    }
+
+    #post_username{
+        display: inline-block;
+    }
+
+    #post_created{
+        display: inline-block;
+        position: absolute;
+        padding-left: 920px;
+    }
+
+    #post_content{
+        padding-top: 20px;
+        font-size: 20px;
+    }
+</style>
+</html>

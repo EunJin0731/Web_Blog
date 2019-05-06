@@ -2,16 +2,25 @@ package kr.hs.dgsw.web01blog.Service;
 
 import kr.hs.dgsw.web01blog.Domain.Post;
 import kr.hs.dgsw.web01blog.Protocol.PostUsernameProtocol;
+import kr.hs.dgsw.web01blog.Protocol.ResponseFormat;
 
 import java.util.List;
 
 public interface PostService {
 
-    List<PostUsernameProtocol> listAllPosts();
+    ResponseFormat getPost();
 
-    PostUsernameProtocol addPost(Post post);
+//    List<PostUsernameProtocol> listAllPosts();
 
-    boolean deletePost(Long id);
+    ResponseFormat addPost(Post post);
 
-    Post updatePost(Long id, Post post);
+    ResponseFormat deletePost(Long postId);
+
+    ResponseFormat updatePost(Long id, Post post);
+
+    ResponseFormat PostCount(String account);
+
+    ResponseFormat view(Long postId);
+
+    ResponseFormat get(String account);
 }

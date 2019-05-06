@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    position: absolute;
+}
+
+div #view_details {
+}
+
+div #posts_details{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 380px;
+}
+
+.container {
+    position: fixed;
+}
+
+header {
+    background-color: #c5e1a5;
+    height: 120px;
+    line-height: 120px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+aside {
+    top: 120px;
+    bottom: 100px;
+    justify-content: center;
+    text-align: center;
+}
+
+aside.left-container {
+    background-color: #f8ffd7;
+    left: 0;
+    width: 200px;
+}
+
+aside.right-container {
+    background-color: #94af76;
+    right: 0;
+    width: 200px;
+}
+
+section {
+    background-color: #dcedc8;
+    left: 200px;
+    right: 200px;
+    top: 120px;
+    bottom: 100px;
+    overflow-y: auto;
+}
+
+footer {
+    background-color: #fffffb;
+    justify-content: center;
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: calc(100vh - 100px) !important;
+}
+
+#new_posts{
+    align: center;
+    text-decoration:underline;
+}
+
+#post_container, #posts_container{
+    position: absolute;
+    display: none;
+}
+#post_buttons, posts_buttons{
+    margin: 30px 0;
+}
+#post_frame, #posts_frame{
+    border: 1px solid;
+    text-align: center;
+    background-color: white;
+    padding: 20px 20px 0px 20px;
+}
+#post_add, posts_edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: #ffffff88;
+}
+
+#post_title{
+    font-size: 30px;
+
+}
+
+#post_username{
+    display: inline-block;
+}
+
+#post_created{
+    display: inline-block;
+    position: absolute;
+    padding-left: 920px;
+}
+
+#post_content{
+    padding-top: 20px;
+    font-size: 20px;
+}

@@ -3,6 +3,7 @@ package kr.hs.dgsw.web01blog.Domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -51,6 +53,9 @@ public class User {
     @Column(unique = true)
     private String phone;
 
+    private String filename;
+    private String filelocal;
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String profilePath;
 
@@ -63,4 +68,13 @@ public class User {
     @Column(nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updated;
+
+    public User(String account, String password, String name, String email, String phone, String profilePath) {
+        this.account = account;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.profilePath = profilePath;
+    }
 }

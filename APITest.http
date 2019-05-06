@@ -5,7 +5,17 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 
-GET http://localhost:8080/user
+GET http://localhost:8080/post
+Accept: application/json
+
+###
+
+GET http://localhost:8080/view/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/get/1234
 Accept: application/json
 
 ###
@@ -14,7 +24,8 @@ POST http://localhost:8080/addPost
 Content-Type: application/json
 
 {
-  "userid": 1,
+  "userId": "1",
+  "title" : "hi",
   "content": "hi 444"
 }
 
@@ -33,16 +44,21 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/updateUser/1
+PUT http://localhost:8080/updatePost/1
 Content-Type: application/json
 
 {
-  "email": "123@1234"
+  "content": "123234"
 }
 
 ###
 
-DELETE http://localhost:8080/deleteUser/1
+DELETE http://localhost:8080/deletePost/1
 Content-Type: application/json
+
+###
+
+GET http://localhost:8080/findUser/abc
+Accept: application/json
 
 ###
